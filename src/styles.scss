@@ -3,11 +3,9 @@
 
 @mixin elemento() {
     padding: 8px;
-    margin-left: 20%;
     display: block;
     width: 100%;
     margin-bottom: 16px;
-    
 }
 
 * {
@@ -91,13 +89,20 @@ section {
 }
 @media screen and (max-width: variaveis.$mobile) {
 
+    section {
+        padding: 10px 0;
+    }
     .container {
         max-width: 78%;
         @include elemento();
+        h2{
+            margin-left: 33%;
+        }
     }
 	.products {
 		display: block;
-        max-width: 70%;
+        max-width: 90%;
+        margin-left: 7%;
 	}
 	.product-item {
 		margin-bottom: 32px;
