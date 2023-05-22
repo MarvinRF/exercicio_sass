@@ -1,18 +1,23 @@
-$color_1: #fff;
-$font-family_1: Roboto, sans-serif;
-$background-color_1: #f5f6fa;
-$background-color_2: #182C61;
-$background-color_3: #44bd32;
-$background-color_4: #4cd137;
+@use 'config/reset.scss';
+@use 'config/variaveis.scss';
+
+@mixin elemento() {
+    padding: 8px;
+    margin-left: 20%;
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    
+}
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: $font-family_1;
+	font-family: variaveis.$font-family-roboto;
 }
 body {
-	background-color: $background-color_1;
+	background-color: variaveis.$background-1;
 }
 li {
 	list-style: none;
@@ -23,7 +28,7 @@ li {
 	margin: 0 auto;
 }
 header {
-	background-color: $background-color_2;
+	background-color: variaveis.$background-2;
 	position: sticky;
 	top: 0;
 	left: 0;
@@ -40,7 +45,7 @@ header {
 		font-weight: bold;
 		margin-left: 24px;
 		a {
-			color: $color_1;
+			color: variaveis.$cor-1;
 			text-decoration: none;
 		}
 	}
@@ -64,18 +69,18 @@ section {
 }
 .product-button {
 	display: block;
-	background-color: $background-color_3;
-	color: $color_1;
+	background-color: variaveis.$background-3;
+	color: variaveis.$cor-1;
 	text-align: center;
 	padding: 8px 0;
 	border-radius: 8px;
 	margin-top: 8px;
 	text-decoration: none;
 	&:hover {
-		background-color: $background-color_4;
+		background-color: variaveis.$background-4;
 	}
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: variaveis.$tablet) {
 	.container {
 		max-width: 80%;
 	}
@@ -84,9 +89,15 @@ section {
 		column-gap: 3%;
 	}
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: variaveis.$mobile) {
+
+    .container {
+        max-width: 78%;
+        @include elemento();
+    }
 	.products {
 		display: block;
+        max-width: 70%;
 	}
 	.product-item {
 		margin-bottom: 32px;
